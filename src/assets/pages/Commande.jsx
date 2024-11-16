@@ -12,12 +12,11 @@ const Commande = () => {
   const [address, setAddress] = useState("");
   const [message, setMessage] = useState("");
 
-  // Etat pour contrôler la visibilité du popup
   const [showPopup, setShowPopup] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Vous pouvez ajouter la logique pour envoyer les données à votre serveur ici.
+
     console.log("Commande soumise", {
       product,
       dimensions,
@@ -31,13 +30,11 @@ const Commande = () => {
       message,
     });
 
-    // Afficher le popup de confirmation
     setShowPopup(true);
   };
 
-  // Fonction pour réinitialiser les champs et fermer le popup
+
   const handleClosePopup = () => {
-    // Réinitialiser les champs du formulaire
     setProduct("");
     setDimensions("");
     setMaterial("");
@@ -49,7 +46,6 @@ const Commande = () => {
     setAddress("");
     setMessage("");
 
-    // Fermer le popup
     setShowPopup(false);
   };
 
@@ -57,7 +53,7 @@ const Commande = () => {
     <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-semibold text-center mb-4">Passer une commande</h2>
       <form onSubmit={handleSubmit}>
-        {/* Sélection du produit */}
+
         <div className="mb-4">
           <label htmlFor="product" className="block text-sm font-medium text-gray-700">
             Produit
@@ -78,7 +74,7 @@ const Commande = () => {
           </select>
         </div>
 
-        {/* Dimensions */}
+
         <div className="mb-4">
           <label htmlFor="dimensions" className="block text-sm font-medium text-gray-700">
             Dimensions (en cm)
@@ -95,7 +91,7 @@ const Commande = () => {
           />
         </div>
 
-        {/* Matériau */}
+
         <div className="mb-4">
           <label htmlFor="material" className="block text-sm font-medium text-gray-700">
             Matériau
@@ -135,7 +131,7 @@ const Commande = () => {
           </select>
         </div>
 
-        {/* Quantité */}
+
         <div className="mb-4">
           <label htmlFor="quantity" className="block text-sm font-medium text-gray-700">
             Quantité
@@ -152,7 +148,7 @@ const Commande = () => {
           />
         </div>
 
-        {/* Informations personnelles */}
+
         <div className="mb-4">
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">
             Nom
@@ -213,7 +209,7 @@ const Commande = () => {
           />
         </div>
 
-        {/* Message spécial */}
+
         <div className="mb-4">
           <label htmlFor="message" className="block text-sm font-medium text-gray-700">
             Message spécial
@@ -228,7 +224,7 @@ const Commande = () => {
           />
         </div>
 
-        {/* Bouton de soumission */}
+
         <div className="mb-4 text-center">
           <button
             type="submit"
@@ -239,7 +235,7 @@ const Commande = () => {
         </div>
       </form>
 
-      {/* Popup de confirmation */}
+
       {showPopup && (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg text-center">
